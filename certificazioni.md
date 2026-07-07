@@ -1,4 +1,3 @@
-[← Torna alla Home](index.md)
 
 Profilo Credly <a href="https://www.credly.com/users/giovanni-paolo-fusco" target="_blank">QUI</a>
 
@@ -25,3 +24,5 @@ Profilo Credly <a href="https://www.credly.com/users/giovanni-paolo-fusco" targe
 
 - **2019-2024 | Diploma in Informatica e Telecomunicazioni** – I.T.I. A. Pacinotti (Voto: 73/100)  
   <a href="Diploma%20Scuola%20Superiore.pdf" target="_blank">Visualizza diploma PDF</a>
+
+[⬅️ Torna alla Home](index.md)
