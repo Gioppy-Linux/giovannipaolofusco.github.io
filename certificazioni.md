@@ -17,11 +17,11 @@ Profilo Credly <a href="https://www.credly.com/users/giovanni-paolo-fusco" targe
   <a href="TRIO%20ICDL%20IT%20Security%2022-03-2026.pdf" target="_blank">Visualizza attestato PDF</a>
 
 - **2025 | Specializzazione Avanzata in Didattica e Intelligenza Artificiale (AI)** – Università Federico II  
-  <a href="Insegnare%20con%20I_AI_%20Progettazione%2021-11-2025.pdf" target="_blank">Visualizza attestato Progettazione</a>  
-  <a href="Insegnare%20con%20I_AI_%20Strumenti%2018-11-2025.pdf" target="_blank">Visualizza attestato Strumenti</a>  
+  <a href="Insegnare%20con%20l_AI_%20Progettazione%2021-11-2025.pdf" target="_blank">Visualizza attestato Progettazione</a>  
+  <a href="Insegnare%20con%20l_AI_%20Strumenti%2018-11-2025.pdf" target="_blank">Visualizza attestato Strumenti</a>  
 
 - **2025 | Personal Finance** – Starting Finance  
   <a href="Starting%20Finance%20-%20Personale%20Finance%2020-11-2025.pdf" target="_blank">Visualizza attestato PDF</a>
 
 - **2019-2024 | Diploma in Informatica e Telecomunicazioni** – I.T.I. A. Pacinotti (Voto: 73/100)  
-  <a href="Diploma%2520Scuola%2520Superiore.pdf" target="_blank">Visualizza diploma PDF</a>
+  <a href="Diploma%20Scuola%20Superiore.pdf" target="_blank">Visualizza diploma PDF</a>
