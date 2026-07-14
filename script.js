@@ -100,3 +100,79 @@ if (githubContainer) {
 
   fetchGitHubProjects();
 }
+
+// --- Credly Badges ---
+const credlyContainer = document.getElementById('credly-badges-container');
+
+if (credlyContainer) {
+  const currentLang = document.documentElement.lang || 'it';
+  const isEn = currentLang === 'en';
+
+  const credlyMessages = {
+    loading: isEn ? 'Loading badges...' : 'Caricamento badge in corso...',
+    noBadges: isEn ? 'No badges found.' : 'Nessun badge trovato.',
+    error: isEn ? 'Unable to load badges at this time.' : 'Impossibile caricare i badge in questo momento.'
+  };
+
+  async function fetchCredlyBadges() {
+    try {
+      credlyContainer.innerHTML = `<p>${credlyMessages.loading}</p>`;
+      const response = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent('https://www.credly.com/users/giovanni-paolo-fusco/badges.json'));
+      
+      if (!response.ok) {
+        throw new Error('Network error');
+      }
+      
+      const data = await response.json();
+      
+      let badgesArray = [];
+      if (Array.isArray(data)) {
+        badgesArray = data;
+      } else if (data && Array.isArray(data.data)) {
+        badgesArray = data.data;
+      }
+
+      credlyContainer.innerHTML = '';
+      
+      if (badgesArray.length === 0) {
+        credlyContainer.innerHTML = `<p>${credlyMessages.noBadges}</p>`;
+        return;
+      }
+
+      badgesArray.forEach(badge => {
+        const title = badge.badge_template?.name || badge.name || 'Certificazione';
+        const imgUrl = badge.badge_template?.image?.url || badge.badge_template?.image_url || badge.image_url || '';
+        const date = badge.issued_at_date || badge.issued_at || '';
+        
+        // Format the date if available
+        let formattedDate = '';
+        if (date) {
+            const d = new Date(date);
+            formattedDate = !isNaN(d.getTime()) ? d.toLocaleDateString(currentLang === 'en' ? 'en-US' : 'it-IT', { year: 'numeric', month: 'long', day: 'numeric' }) : date;
+        }
+
+        const badgeId = badge.id;
+        const link = badge.badge_url || (badgeId ? `https://www.credly.com/badges/${badgeId}` : '#');
+
+        const badgeCard = document.createElement('a');
+        badgeCard.className = 'card-credly';
+        badgeCard.href = link;
+        badgeCard.target = '_blank';
+        badgeCard.rel = 'noopener noreferrer';
+
+        badgeCard.innerHTML = `
+          ${imgUrl ? `<img src="${imgUrl}" alt="${title}">` : ''}
+          <h3>${title}</h3>
+          ${formattedDate ? `<p class="credly-date">${formattedDate}</p>` : ''}
+        `;
+        
+        credlyContainer.appendChild(badgeCard);
+      });
+    } catch (error) {
+      console.error('Error fetching Credly badges:', error);
+      credlyContainer.innerHTML = `<p>${credlyMessages.error}</p>`;
+    }
+  }
+
+  fetchCredlyBadges();
+}
