@@ -518,11 +518,24 @@ svg {
 /* Adattamenti per Dispositivi Mobili (Responsive Design) */
 @media (max-width: 640px) {
   nav {
-    padding: 0 20px;
+    padding: 0 12px;
   }
   
   .nav-title {
     display: none;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+  
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .lang-selector {
+    font-size: 12px;
+    gap: 4px;
   }
   
   main {
